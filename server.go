@@ -23,6 +23,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	payload := Entry{
 		Node: "Mat's translation",
 		Text: LabelLanguages(p.History),
+		Desc: desc,
 	}
 	p.History = append(p.History, payload)
 	p.Text = payload.Text

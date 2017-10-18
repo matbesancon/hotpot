@@ -6,6 +6,8 @@ import (
 	"github.com/mbesancon/hotpot/detector"
 )
 
+const desc = "A language detection returning the inferred languages of previous entries"
+
 // Potato is the whole structure received from the client
 type Potato struct {
 	Text    string  `json:"text"`
@@ -30,5 +32,5 @@ func LabelLanguages(entries []Entry) string {
 	if len(result) > 0 {
 		return strings.Join(result, ";")
 	}
-	return "No language could be detected :("
+	return "No language could be detected"
 }

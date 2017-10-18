@@ -12,7 +12,7 @@ container: build
 
 run: build container
 	docker run -p 8080:8080 mbesancon/hotpot
- 
+
 publish: container
 	docker push mbesancon/hotpot
 
