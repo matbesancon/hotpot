@@ -8,6 +8,11 @@ import (
 
 // Handler is the main handler fetching the history and adding a text
 func Handler(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost {
+		w.WriteHeader(404)
+		w.Write([]byte("Method not allowed on route\n"))
+		return
+	}
 	p := Potato{}
 	if err := json.NewDecoder(r.Body).Decode(&p); err != nil {
 		log.Printf("Error parsing potatoe structure: %#v\n", err.Error())
