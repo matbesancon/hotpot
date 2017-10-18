@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: translator
+spec:
+  selector:
+    app: translator
+  ports:
+    - port: 80  # Keep this port, so people can reach you through http://[your name]/process
+      targetPort: 8080
